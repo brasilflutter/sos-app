@@ -1,0 +1,31 @@
+name: sos
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_map: ^6.1.0
+  design_sos:
+    git:
+      url: https://github.com/brasilflutter/design-sos.git
+      ref: main
+      
+  framework_sos:
+    git:
+      url: https://github.com/brasilflutter/framework-sos.git
+      ref: main
+
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  
+flutter:
+  uses-material-design: true
