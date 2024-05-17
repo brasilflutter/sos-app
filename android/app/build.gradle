@@ -11,6 +11,15 @@ if (localPropertiesFile.exists()) {
         localProperties.load(reader)
     }
 }
+def dartEnvironmentVariables = []
+if (project.hasProperty('dart-defines')) {
+    dartEnvironmentVariables = project.property('dart-defines')
+        .split(',')
+        .collectEntries { entry ->
+            def pair = new String(entry.decodeBase64(), 'UTF-8').split('=')
+            [(pair.first()): pair.last()]
+        }
+}
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
@@ -49,6 +58,9 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        manifestPlaceholders += [ 
+            apiKeyGoogleMaps: dartEnvironmentVariables.apiKeyGoogleMaps
+        ]
     }
 
     buildTypes {

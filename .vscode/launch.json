@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Running App",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=apiKeyGoogleMaps=AIzaSyAbV3AyovChggZfFRQIWRahR96wJAN7n8Q"
+            ]
+        },
+    ]
+}
