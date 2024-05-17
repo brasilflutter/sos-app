@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:framework_sos/framework_sos.dart';
 
-import 'home_pet_error_state.dart';
+import 'home_error_state.dart';
 
-class HomePetErrorView extends ErrorBaseView<HomePetErrorState> {
-  const HomePetErrorView({super.key, required super.state});
+class HomeErrorView extends ErrorBaseView<HomeErrorState> {
+  const HomeErrorView({super.key, required super.state});
 
   @override
   Widget buildView(BuildContext context) {

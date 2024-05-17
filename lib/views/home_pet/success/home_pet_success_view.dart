@@ -8,11 +8,11 @@ class HomePetSuccessView extends SuccessBaseView<HomePetSuccessState> {
 
   @override
   Widget buildView(BuildContext context) {
-    // TODO: implement buildView error
-    throw UnimplementedError('buildView success is not implemented');
-    // return ElevatedButton(
-    // onPressed: state.onClick,
-    // child: Text(state.text),
-    // );
+    return Scaffold(
+      body: ElevatedButton(
+        onPressed: state.onClick,
+        child: Text(state.text),
+      ),
+    );
   }
 }

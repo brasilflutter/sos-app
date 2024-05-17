@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:framework_sos/framework_sos.dart';
 
-import 'home_pet_loading_state.dart';
+import 'home_loading_state.dart';
 
-class HomePetLoadingView extends LoadingBaseView<HomePetLoadingState> {
-  const HomePetLoadingView({super.key, required super.state});
+class HomeLoadingView extends LoadingBaseView<HomeLoadingState> {
+  const HomeLoadingView({super.key, required super.state});
 
   @override
   Widget buildView(BuildContext context) {
