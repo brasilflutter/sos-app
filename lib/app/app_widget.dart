@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sos/views/home/home_view_factory.dart';
+
+import '../views/map_search/map_search_view_factory.dart';
 
 class AppWidget extends StatelessWidget {
   // final ITheme theme;
@@ -12,7 +13,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       // debugShowCheckedModeBanner: FlavorConfig.instance.env.enableBanner,
       // theme: ThemeManager.createThemeData(theme: theme),
-      home: const ExampleHomeViewFactory(),
+      home: const ExampleMapSearchViewFactory(),
     );
   }
 }
