@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:framework_sos/framework_sos.dart';
+import 'package:sos/core/core.dart';
 
 import 'home_pet_states.dart';
 import 'home_pet_views.dart';
@@ -11,29 +13,48 @@ class HomePetViewFactory {
   static ErrorBaseView<HomePetErrorState> error(HomePetErrorState state) => HomePetErrorView(state: state);
 }
 
+class ExampleHomePetViewFactory extends StatelessWidget {
+  const ExampleHomePetViewFactory({super.key});
 
-// class ExampleHomePetViewFactory extends StatelessWidget {
-//   const ExampleHomePetViewFactory({super.key});
-
-// This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-//         useMaterial3: true,
-//       ),
-//       home: Scaffold(
-//         body: Center(
-//             child: Column(
-//           children: [
-//             HomePetViewFactory.error(HomePetErrorState(message: 'Error message')),
-//             HomePetViewFactory.loading(HomePetLoadingState()),
-//             HomePetViewFactory.success(HomePetSuccessState(text: 'Success text', onClick: (state) {})),
-//           ],
-//         )),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return HomePetViewFactory.success(HomePetSuccessState(
+      text: 'Success text',
+      micOnPressed: () {},
+      categoryPetList: [
+        CategoryPetEntity(name: 'Category 1', id: '1'),
+        CategoryPetEntity(name: 'Category 2', id: '2'),
+        CategoryPetEntity(name: 'Category 3', id: '3'),
+        CategoryPetEntity(name: 'Category 3', id: '3'),
+        CategoryPetEntity(name: 'Category 3', id: '3'),
+        CategoryPetEntity(name: 'Category 3', id: '3'),
+        CategoryPetEntity(name: 'Category 3', id: '3'),
+        CategoryPetEntity(name: 'Category 3', id: '3'),
+        CategoryPetEntity(name: 'Category 3', id: '3'),
+      ],
+      petList: [
+        PetEntity(
+          name: 'FLOR',
+          color: 'Bege',
+          sex: 'Man',
+          status: 'Desaparecido',
+          isDetectorDevice: true,
+          race: "PUGG",
+          imageUrl: 'https://www.petz.com.br/blog/wp-content/uploads/2019/03/cachorro-mini-pet.jpg',
+        ),
+        PetEntity(
+          name: 'FLOR',
+          color: 'Color 1',
+          sex: 'Man',
+          status: 'Desaparecido',
+          isDetectorDevice: true,
+          race: "PUGG",
+          imageUrl: 'https://www.petz.com.br/blog/wp-content/uploads/2019/03/cachorro-mini-pet.jpg',
+        ),
+      ],
+      onTapCategoryPet: (index) {
+        print('Category tapped: $index');
+      },
+    ));
+  }
+}

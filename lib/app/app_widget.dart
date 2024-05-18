@@ -1,18 +1,20 @@
+import 'package:design_sos/design_sos.dart';
 import 'package:flutter/material.dart';
-import 'package:sos/views/home/home_view_factory.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sos/views/home_pet/home_pet_view_factory.dart';
 
 class AppWidget extends StatelessWidget {
-  // final ITheme theme;
-  const AppWidget({super.key});
+  final ITheme theme;
+  const AppWidget({super.key, required this.theme});
 
   @override
   Widget build(BuildContext context) {
+    final fontFamily = GoogleFonts.montserrat().fontFamily;
     return MaterialApp(
       title: 'SOS',
-      theme: ThemeData(primarySwatch: Colors.blue),
       // debugShowCheckedModeBanner: FlavorConfig.instance.env.enableBanner,
-      // theme: ThemeManager.createThemeData(theme: theme),
-      home: const ExampleHomeViewFactory(),
+      theme: ThemeManager.createThemeData(theme: theme, fontFamily: fontFamily),
+      home: const ExampleHomePetViewFactory(),
     );
   }
 }

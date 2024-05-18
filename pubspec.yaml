@@ -19,8 +19,11 @@ dependencies:
     git:
       url: https://github.com/brasilflutter/framework-sos.git
       ref: main
+  google_fonts: ^6.2.1
 
-  
+# dependency_overrides:
+#   design_sos:
+#     path: ../design_sos
 
 dev_dependencies:
   flutter_test:
@@ -32,3 +35,4 @@ flutter:
 
   assets:
     - assets/elements/
+    - assets/theme.json
