@@ -13,12 +13,23 @@ class HomePetViewFactory {
   static ErrorBaseView<HomePetErrorState> error(HomePetErrorState state) => HomePetErrorView(state: state);
 }
 
-class ExampleHomePetViewFactory extends StatelessWidget {
+class ExampleHomePetViewFactory extends StatefulWidget {
   const ExampleHomePetViewFactory({super.key});
+
+  @override
+  State<ExampleHomePetViewFactory> createState() => _ExampleHomePetViewFactoryState();
+}
+
+class _ExampleHomePetViewFactoryState extends State<ExampleHomePetViewFactory> {
+  int indexCategory = 0;
 
   @override
   Widget build(BuildContext context) {
     return HomePetViewFactory.success(HomePetSuccessState(
+      seachPetController: TextEditingController(),
+      onTapSearchPet: (value) {
+        print('Search pet tapped');
+      },
       text: 'Success text',
       micOnPressed: () {},
       categoryPetList: [
@@ -40,7 +51,52 @@ class ExampleHomePetViewFactory extends StatelessWidget {
           status: 'Desaparecido',
           isDetectorDevice: false,
           race: "PUGG",
-          imageUrl: 'https://www.petz.com.br/blog/wp-content/uploads/2019/03/cachorro-mini-pet.jpg',
+          imageUrl: 'https://i0.statig.com.br/bancodeimagens/78/pt/gs/78ptgsfeddfh638dkkzya5p3y.jpg',
+        ),
+        PetEntity(
+          name: 'FLOR',
+          color: 'Color 1',
+          sex: 'Man',
+          status: 'Desaparecido',
+          isDetectorDevice: true,
+          race: "PUGG",
+          imageUrl: '',
+        ),
+        PetEntity(
+          name: 'FLOR',
+          color: 'Color 1',
+          sex: 'Man',
+          status: 'Desaparecido',
+          isDetectorDevice: true,
+          race: "PUGG",
+          imageUrl: '',
+        ),
+        PetEntity(
+          name: 'FLOR',
+          color: 'Color 1',
+          sex: 'Man',
+          status: 'Desaparecido',
+          isDetectorDevice: true,
+          race: "PUGG",
+          imageUrl: '',
+        ),
+        PetEntity(
+          name: 'FLOR',
+          color: 'Color 1',
+          sex: 'Man',
+          status: 'Desaparecido',
+          isDetectorDevice: true,
+          race: "PUGG",
+          imageUrl: '',
+        ),
+        PetEntity(
+          name: 'FLOR',
+          color: 'Color 1',
+          sex: 'Man',
+          status: 'Desaparecido',
+          isDetectorDevice: true,
+          race: "PUGG",
+          imageUrl: '',
         ),
         PetEntity(
           name: 'FLOR',
@@ -52,8 +108,11 @@ class ExampleHomePetViewFactory extends StatelessWidget {
           imageUrl: '',
         ),
       ],
+      indexCategory: indexCategory,
       onTapCategoryPet: (index) {
-        print('Category tapped: $index');
+        setState(() {
+          indexCategory = index;
+        });
       },
       onTapAddNewPet: () {
         print('Add new pet tapped');

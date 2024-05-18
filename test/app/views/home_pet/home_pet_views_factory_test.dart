@@ -1,7 +1,7 @@
+import 'package:flutter_test/flutter_test.dart';
 import 'package:sos/views/home_pet/home_pet_states.dart';
 import 'package:sos/views/home_pet/home_pet_view_factory.dart';
 import 'package:sos/views/home_pet/home_pet_views.dart';
-import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('HomePetViewFactory Tests', () {
@@ -13,7 +13,7 @@ void main() {
     });
 
     testWidgets('HomePetViewFactory.success returns HomePetSuccessView', (WidgetTester tester) async {
-      final successState = HomePetSuccessState(text: 'Success', onClick: (_) {});
+      final successState = HomePetSuccessState(text: 'Success', micOnPressed: () {}, indexCategory: 0, categoryPetList: [], petList: [], onTapCategoryPet: (index) {}, onTapAddNewPet: () {});
       final successView = HomePetViewFactory.success(successState);
 
       expect(successView, isA<HomePetSuccessView>());

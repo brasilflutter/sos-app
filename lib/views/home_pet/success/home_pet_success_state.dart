@@ -1,9 +1,13 @@
+import 'package:flutter/material.dart';
 import 'package:framework_sos/framework_sos.dart';
 import 'package:sos/core/core.dart';
 
 class HomePetSuccessState extends SuccessBaseState {
   final String text;
   final Function() micOnPressed;
+  final Function(String) onTapSearchPet;
+  final TextEditingController seachPetController;
+  final int indexCategory;
   final List<CategoryPetEntity> categoryPetList;
   final List<PetEntity> petList;
   final Function(int) onTapCategoryPet;
@@ -12,6 +16,9 @@ class HomePetSuccessState extends SuccessBaseState {
   HomePetSuccessState({
     required this.text,
     required this.micOnPressed,
+    required this.onTapSearchPet,
+    required this.seachPetController,
+    required this.indexCategory,
     required this.categoryPetList,
     required this.petList,
     required this.onTapCategoryPet,
@@ -20,7 +27,11 @@ class HomePetSuccessState extends SuccessBaseState {
 
   HomePetSuccessState copyWith({
     String? text,
+    Color? backgroundColorCategoryPet,
     Function()? micOnPressed,
+    TextEditingController? seachPetController,
+    Function(String)? onTapSearchPet,
+    int? indexCategory,
     List<CategoryPetEntity>? categoryPetList,
     List<PetEntity>? petList,
     Function(int)? onTapCategoryPet,
@@ -29,6 +40,9 @@ class HomePetSuccessState extends SuccessBaseState {
     return HomePetSuccessState(
       text: text ?? this.text,
       micOnPressed: micOnPressed ?? this.micOnPressed,
+      indexCategory: indexCategory ?? this.indexCategory,
+      seachPetController: seachPetController ?? this.seachPetController,
+      onTapSearchPet: onTapSearchPet ?? this.onTapSearchPet,
       categoryPetList: categoryPetList ?? this.categoryPetList,
       petList: petList ?? this.petList,
       onTapCategoryPet: onTapCategoryPet ?? this.onTapCategoryPet,

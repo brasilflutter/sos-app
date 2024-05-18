@@ -1,6 +1,6 @@
-import 'package:sos/views/home_pet/home_pet_views.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:sos/views/home_pet/home_pet_views.dart';
 
 import 'home_pet_mock_success_state.dart';
 
@@ -12,7 +12,15 @@ void main() {
       buttonPressed = true;
     }
 
-    final state = HomePetMockSuccessState(text: 'click', onClick: onButtonPressed);
+    final state = HomePetMockSuccessState(
+      text: 'click',
+      micOnPressed: () {},
+      indexCategory: 0,
+      categoryPetList: [],
+      petList: [],
+      onTapCategoryPet: (index) {},
+      onTapAddNewPet: () {},
+    );
     // Build our app and trigger a frame
     await tester.pumpWidget(MaterialApp(
       home: HomePetSuccessView(state: state),

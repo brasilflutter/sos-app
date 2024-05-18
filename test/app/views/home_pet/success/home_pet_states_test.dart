@@ -6,7 +6,12 @@ void main() {
   test('validate state success', () async {
     final state = HomePetMockSuccessState(
       text: "Realizado com sucesso!",
-      onClick: (state) => print("Button pressed"),
+      micOnPressed: () {},
+      indexCategory: 0,
+      categoryPetList: [],
+      petList: [],
+      onTapCategoryPet: (index) {},
+      onTapAddNewPet: () {},
     );
     expect(state, isNotNull);
     expect(state.text, "Realizado com sucesso!");

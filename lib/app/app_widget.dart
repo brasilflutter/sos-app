@@ -14,7 +14,7 @@ class AppWidget extends StatelessWidget {
       title: 'SOS',
       // debugShowCheckedModeBanner: FlavorConfig.instance.env.enableBanner,
       theme: ThemeManager.createThemeData(theme: theme, fontFamily: fontFamily),
-      home: const ExampleHomePetViewFactory(),
+      home: ExampleHomePetViewFactory(),
     );
   }
 }
