@@ -38,7 +38,7 @@ class ExampleHomePetViewFactory extends StatelessWidget {
           color: 'Bege',
           sex: 'Man',
           status: 'Desaparecido',
-          isDetectorDevice: true,
+          isDetectorDevice: false,
           race: "PUGG",
           imageUrl: 'https://www.petz.com.br/blog/wp-content/uploads/2019/03/cachorro-mini-pet.jpg',
         ),
@@ -49,11 +49,14 @@ class ExampleHomePetViewFactory extends StatelessWidget {
           status: 'Desaparecido',
           isDetectorDevice: true,
           race: "PUGG",
-          imageUrl: 'https://www.petz.com.br/blog/wp-content/uploads/2019/03/cachorro-mini-pet.jpg',
+          imageUrl: '',
         ),
       ],
       onTapCategoryPet: (index) {
         print('Category tapped: $index');
+      },
+      onTapAddNewPet: () {
+        print('Add new pet tapped');
       },
     ));
   }

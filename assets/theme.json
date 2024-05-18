@@ -46,7 +46,7 @@
       "bodyLarge": {
         "color": "0xff373737",
         "fontSize": 16.0,
-        "fontWeight": "w400",
+        "fontWeight": "w700",
         "letterSpacing": 0.25,
         "wordSpacing": 0,
         "height": 1
@@ -54,7 +54,7 @@
       "bodyMedium": {
         "color": "0xff373737",
         "fontSize": 14.0,
-        "fontWeight": "w400",
+        "fontWeight": "w700",
         "letterSpacing": 0.25,
         "wordSpacing": 0,
         "height": 1
@@ -69,39 +69,39 @@
       },
       "labelLarge": {
         "color": "0xff373737",
-        "fontSize": 14.0,
-        "fontWeight": "w700",
+        "fontSize": 24.0,
+        "fontWeight": "w500",
         "letterSpacing": 0.25,
         "wordSpacing": 0,
         "height": 1
       },
       "labelMedium": {
         "color": "0xff373737",
-        "fontSize": 12.0,
-        "fontWeight": "w500",
+        "fontSize": 16.0,
+        "fontWeight": "w300",
         "letterSpacing": 0.5,
         "wordSpacing": 0,
         "height": 1
       },
       "labelSmall": {
         "color": "0xff373737",
-        "fontSize": 11.0,
-        "fontWeight": "w500",
+        "fontSize": 14.0,
+        "fontWeight": "w300",
         "letterSpacing": 0.5,
         "wordSpacing": 0,
         "height": 1
       },
       "titleLarge": {
         "color": "0xff373737",
-        "fontSize": 22.0,
-        "fontWeight": "w600",
+        "fontSize": 12.0,
+        "fontWeight": "w400",
         "letterSpacing": 0.15,
         "wordSpacing": 0,
         "height": 1
       },
       "titleMedium": {
         "color": "0xff373737",
-        "fontSize": 16.0,
+        "fontSize": 24.0,
         "fontWeight": "w500",
         "letterSpacing": 0.15,
         "wordSpacing": 0,
@@ -117,16 +117,16 @@
       },
       "headlineLarge": {
         "color": "0xff373737",
-        "fontSize": 32.0,
-        "fontWeight": "w700",
+        "fontSize": 14.0,
+        "fontWeight": "w400",
         "letterSpacing": 0.25,
         "wordSpacing": 0,
         "height": 1
       },
       "headlineMedium": {
         "color": "0xff373737",
-        "fontSize": 28.0,
-        "fontWeight": "w400",
+        "fontSize":12.0,
+        "fontWeight": "w500",
         "letterSpacing": 0.5,
         "wordSpacing": 0,
         "height": 1
@@ -141,7 +141,7 @@
       },
       "displayLarge": {
         "color": "0xff373737",
-        "fontSize": 57.0,
+        "fontSize": 16.0,
         "fontWeight": "w700",
         "letterSpacing": 1,
         "wordSpacing": 0,
@@ -149,7 +149,7 @@
       },
       "displayMedium": {
         "color": "0xff373737",
-        "fontSize": 45.0,
+        "fontSize": 14.0,
         "fontWeight": "w400",
         "letterSpacing": 1.5,
         "wordSpacing": 0,
@@ -157,8 +157,8 @@
       },
       "displaySmall": {
         "color": "0xff373737",
-        "fontSize": 36.0,
-        "fontWeight": "w700",
+        "fontSize": 12.0,
+        "fontWeight": "w300",
         "letterSpacing": 1.5,
         "wordSpacing": 0,
         "height": 1
@@ -167,7 +167,7 @@
     "tokenButtonsTheme": {
       "tokenElevatedButtonTheme": {
         "padding": null,
-        "backgroundColor": "0xffA10607",
+        "backgroundColor": "0xffF25C5C",
         "borderRadius": {
           "topLeft": 30.0,
           "topRight": 30.0,
@@ -175,9 +175,9 @@
           "bottomRight": 30.0
         },
         "foregroundColor": "0xffFFFFFF",
-        "disabledColor": "0xffDCDCDC",
-        "disabledTextColor": "0xff00000000",
-        "elevation": 8.0
+        "disabledColor": "0xffF25C5C",
+        "disabledTextColor": "0xffF25C5C",
+        "elevation": 0.0
       },
       "tokenOutlinedButtonTheme": {
         "padding": null,
@@ -188,14 +188,14 @@
           "bottomRight": 30.0
         },
         "foregroundColor": "0xff515151",
-        "disabledColor": "0xffDCDCDC",
-        "disabledTextColor": "0xffDCDCDC",
+        "disabledColor": "0xffF25C5C",
+        "disabledTextColor": "0xffF25C5C",
         "borderWidth": 1.2
       },
       "tokenTextButtonTheme": {
-        "disabledTextColor": "0xffDCDCDC",
+        "disabledTextColor": "0xffF25C5C",
         "fontSize": 14.0,
-        "fontWeight": "w500",
+        "fontWeight": "w700",
         "textColor": "0xffA10607"
       }
     },

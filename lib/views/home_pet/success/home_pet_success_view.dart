@@ -22,6 +22,7 @@ class HomePetSuccessView extends SuccessBaseView<HomePetSuccessState> {
                   shrinkWrap: true,
                   itemCount: state.categoryPetList.length,
                   scrollDirection: Axis.horizontal,
+                  physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
                     return Padding(
                         padding: const EdgeInsets.only(right: 8.0),
@@ -50,6 +51,7 @@ class HomePetSuccessView extends SuccessBaseView<HomePetSuccessState> {
                   },
                 ),
               ),
+              Row(children: [Expanded(child: ButtomWidgets.addNewPet(onPressed: () => state.onTapAddNewPet()))]),
             ],
           ),
         ),

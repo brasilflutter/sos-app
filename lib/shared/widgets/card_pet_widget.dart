@@ -1,5 +1,7 @@
 import 'package:design_sos/design_sos.dart';
 import 'package:flutter/material.dart';
+import 'package:sos/shared/elements/icons_element.dart';
+import 'package:sos/shared/widgets/svg_images_widgets.dart';
 
 class CardPetWidget extends StatelessWidget {
   final String name;
@@ -45,7 +47,7 @@ class CardPetWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(name, style: Theme.of(context).textTheme.labelSmall?.copyWith(fontWeight: FontWeight.bold, fontSize: 16)),
-                        Visibility(visible: isDetectorDevice, child: Icon(Icons.radio_button_unchecked_outlined, color: Theme.of(context).colorScheme.primary, size: 16)),
+                        Visibility(visible: isDetectorDevice, child: SvgImagesWidgets(path: IconsElement.union, color: Theme.of(context).colorScheme.primary)),
                       ],
                     ),
                     Row(
@@ -64,10 +66,7 @@ class CardPetWidget extends StatelessWidget {
                         const Spacer(),
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
+                          decoration: BoxDecoration(color: Theme.of(context).colorScheme.primary, borderRadius: BorderRadius.circular(50)),
                           child: Text(status, style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
                         ),
                       ],
@@ -76,24 +75,24 @@ class CardPetWidget extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              width: Theme.of(context).extension<TokenPadding>()!.horizontalSmallSpacing,
-            ),
+            SizedBox(width: Theme.of(context).extension<TokenPadding>()!.horizontalSmallSpacing),
             Container(
               width: 110,
+              height: 110,
               margin: Theme.of(context).extension<TokenPadding>()!.mediumPadding,
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.only(topRight: Radius.circular(20), bottomRight: Radius.circular(20), topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)),
                 image: DecorationImage(image: NetworkImage(imageUrl), fit: BoxFit.cover),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
+                    color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
                     spreadRadius: 1,
                     blurRadius: 2,
                     offset: const Offset(0, 1),
                   ),
                 ],
               ),
+              child: Visibility(visible: imageUrl.isEmpty, child: Icon(Icons.pets, size: 50, color: Theme.of(context).colorScheme.primary)),
             ),
           ],
         ),
