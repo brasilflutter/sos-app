@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:sos/views/info_pet/info_pet_view_factory.dart';
 
 abstract class NavigatorController {
   List<DeviceOrientation> getPreferredOrientations({bool? forceLandscape, bool? forcePortrait});
@@ -9,6 +10,8 @@ abstract class NavigatorController {
   void popUntil(RoutePredicate predicate);
 
   Future<dynamic> navigateToAdminPage();
+
+  Future<dynamic> navigateToInfoPet(String petId);
 }
 
 class NavigatorControllerImpl extends NavigatorController {
@@ -45,4 +48,9 @@ class NavigatorControllerImpl extends NavigatorController {
 
   @override
   navigateToAdminPage() => Navigator.push(context, MaterialPageRoute(builder: (context) => Container()));
+
+  @override
+  Future navigateToInfoPet(String petId) {
+    return Navigator.push(context, MaterialPageRoute(builder: (context) => const ExampleInfoPetViewFactory()));
+  }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:framework_sos/framework_sos.dart';
+import 'package:sos/shared/elements/images_element.dart';
 import 'package:sos/shared/widgets/widgets.dart';
 
 import 'home_pet_success_state.dart';
@@ -44,25 +45,42 @@ class HomePetSuccessView extends SuccessBaseView<HomePetSuccessState> {
                 },
               ),
             ),
-            Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: state.petList.length,
-                padding: EdgeInsets.zero,
-                itemBuilder: (context, index) {
-                  return CardPetWidget(
-                    onTap: () => {},
-                    name: state.petList[index].name,
-                    color: state.petList[index].color,
-                    race: state.petList[index].race,
-                    sex: state.petList[index].sex,
-                    imageUrl: state.petList[index].imageUrl,
-                    status: state.petList[index].status,
-                    isDetectorDevice: state.petList[index].isDetectorDevice,
-                  );
-                },
+            if (state.petList.isNotEmpty) ...[
+              Expanded(
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: state.petList.length,
+                  padding: EdgeInsets.zero,
+                  itemBuilder: (context, index) {
+                    return CardPetWidget(
+                      onTap: () => state.toNavigatePetInfo(state.petList[index].id),
+                      name: state.petList[index].name,
+                      color: state.petList[index].color,
+                      race: state.petList[index].race,
+                      sex: state.petList[index].sex,
+                      imageUrl: state.petList[index].imageUrl,
+                      status: state.petList[index].status,
+                      isDetectorDevice: state.petList[index].isDetectorDevice,
+                    );
+                  },
+                ),
               ),
-            ),
+            ],
+            if (state.petList.isEmpty) ...[
+              Expanded(
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(ImagesElements.notFound, width: 200, fit: BoxFit.cover),
+                      const Center(
+                        child: Text('Nenhum pet cadastrado'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
             Row(children: [Expanded(child: ButtomWidgets.addNewPet(onPressed: () => state.onTapAddNewPet()))]),
           ],
         ),

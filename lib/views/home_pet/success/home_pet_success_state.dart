@@ -12,6 +12,7 @@ class HomePetSuccessState extends SuccessBaseState {
   final List<PetEntity> petList;
   final Function(int) onTapCategoryPet;
   final Function() onTapAddNewPet;
+  final Function(String) toNavigatePetInfo;
 
   HomePetSuccessState({
     required this.text,
@@ -23,6 +24,7 @@ class HomePetSuccessState extends SuccessBaseState {
     required this.petList,
     required this.onTapCategoryPet,
     required this.onTapAddNewPet,
+    required this.toNavigatePetInfo,
   });
 
   HomePetSuccessState copyWith({
@@ -36,6 +38,7 @@ class HomePetSuccessState extends SuccessBaseState {
     List<PetEntity>? petList,
     Function(int)? onTapCategoryPet,
     Function()? onTapAddNewPet,
+    Function(String)? toNavigatePetInfo,
   }) {
     return HomePetSuccessState(
       text: text ?? this.text,
@@ -47,6 +50,7 @@ class HomePetSuccessState extends SuccessBaseState {
       petList: petList ?? this.petList,
       onTapCategoryPet: onTapCategoryPet ?? this.onTapCategoryPet,
       onTapAddNewPet: onTapAddNewPet ?? this.onTapAddNewPet,
+      toNavigatePetInfo: toNavigatePetInfo ?? this.toNavigatePetInfo,
     );
   }
 }

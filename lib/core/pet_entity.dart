@@ -1,4 +1,5 @@
 class PetEntity {
+  final String id;
   final String name;
   final String color;
   final String sex;
@@ -7,6 +8,7 @@ class PetEntity {
   final String status;
   final bool isDetectorDevice;
   PetEntity({
+    required this.id,
     required this.name,
     required this.sex,
     required this.color,
@@ -18,6 +20,7 @@ class PetEntity {
 
   factory PetEntity.fromJson(Map<String, dynamic>? json) {
     return PetEntity(
+      id: json?['id'],
       name: json?['name'],
       color: json?['color'],
       sex: json?['sex'],
@@ -30,6 +33,7 @@ class PetEntity {
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'name': name,
       'color': color,
       'sex': sex,

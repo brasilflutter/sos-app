@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:framework_sos/framework_sos.dart';
 import 'package:sos/core/core.dart';
+import 'package:sos/shared/navigator/navigator_controller.dart';
 
 import 'home_pet_states.dart';
 import 'home_pet_views.dart';
@@ -25,7 +26,11 @@ class _ExampleHomePetViewFactoryState extends State<ExampleHomePetViewFactory> {
 
   @override
   Widget build(BuildContext context) {
+    final NavigatorController navigatorController = NavigatorControllerImpl(context);
     return HomePetViewFactory.success(HomePetSuccessState(
+      toNavigatePetInfo: (id) {
+        navigatorController.navigateToInfoPet(id);
+      },
       seachPetController: TextEditingController(),
       onTapSearchPet: (value) {
         print('Search pet tapped');
@@ -45,6 +50,7 @@ class _ExampleHomePetViewFactoryState extends State<ExampleHomePetViewFactory> {
       ],
       petList: [
         PetEntity(
+          id: '1',
           name: 'FLOR',
           color: 'Bege',
           sex: 'Man',
@@ -54,6 +60,7 @@ class _ExampleHomePetViewFactoryState extends State<ExampleHomePetViewFactory> {
           imageUrl: 'https://i0.statig.com.br/bancodeimagens/78/pt/gs/78ptgsfeddfh638dkkzya5p3y.jpg',
         ),
         PetEntity(
+          id: '2',
           name: 'FLOR',
           color: 'Color 1',
           sex: 'Man',
@@ -63,6 +70,7 @@ class _ExampleHomePetViewFactoryState extends State<ExampleHomePetViewFactory> {
           imageUrl: '',
         ),
         PetEntity(
+          id: '3',
           name: 'FLOR',
           color: 'Color 1',
           sex: 'Man',
@@ -72,6 +80,7 @@ class _ExampleHomePetViewFactoryState extends State<ExampleHomePetViewFactory> {
           imageUrl: '',
         ),
         PetEntity(
+          id: '4',
           name: 'FLOR',
           color: 'Color 1',
           sex: 'Man',
@@ -81,6 +90,7 @@ class _ExampleHomePetViewFactoryState extends State<ExampleHomePetViewFactory> {
           imageUrl: '',
         ),
         PetEntity(
+          id: '5',
           name: 'FLOR',
           color: 'Color 1',
           sex: 'Man',
@@ -90,6 +100,7 @@ class _ExampleHomePetViewFactoryState extends State<ExampleHomePetViewFactory> {
           imageUrl: '',
         ),
         PetEntity(
+          id: '6',
           name: 'FLOR',
           color: 'Color 1',
           sex: 'Man',
@@ -99,6 +110,7 @@ class _ExampleHomePetViewFactoryState extends State<ExampleHomePetViewFactory> {
           imageUrl: '',
         ),
         PetEntity(
+          id: '7',
           name: 'FLOR',
           color: 'Color 1',
           sex: 'Man',
@@ -112,6 +124,7 @@ class _ExampleHomePetViewFactoryState extends State<ExampleHomePetViewFactory> {
       onTapCategoryPet: (index) {
         setState(() {
           indexCategory = index;
+          print('Category pet tapped');
         });
       },
       onTapAddNewPet: () {
