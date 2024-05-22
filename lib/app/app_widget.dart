@@ -1,7 +1,7 @@
 import 'package:design_sos/design_sos.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sos/views/home_pet/home_pet_view_factory.dart';
+import 'package:sos/views/locate_pet/locate_pet_view_factory.dart';
 
 class AppWidget extends StatelessWidget {
   final ITheme theme;
@@ -14,7 +14,7 @@ class AppWidget extends StatelessWidget {
       title: 'SOS',
       // debugShowCheckedModeBanner: FlavorConfig.instance.env.enableBanner,
       theme: ThemeManager.createThemeData(theme: theme, fontFamily: fontFamily),
-      home: ExampleHomePetViewFactory(),
+      home: const ExampleLocatePetViewFactory(),
     );
   }
 }

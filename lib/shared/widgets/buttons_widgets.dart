@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ButtomWidgets extends StatelessWidget {
-  final String text;
+  final String? text;
   final Size? size;
   final Color? backgroundColor;
   final EdgeInsetsGeometry? padding;
@@ -31,10 +31,13 @@ class ButtomWidgets extends StatelessWidget {
           ),
         ),
         onPressed: () => onPressed,
-        child: Text(text));
+        child: Text(text ?? ''));
   }
 
   factory ButtomWidgets.addNewPet({void Function()? onPressed}) {
     return ButtomWidgets(text: 'Cadastrar novo animal', size: const Size(double.infinity, 50), onPressed: onPressed);
+  }
+  factory ButtomWidgets.locationPetMicroChip({void Function()? onPressed, Color? backgroundColor}) {
+    return ButtomWidgets(text: 'Localizar', backgroundColor: backgroundColor, size: const Size(double.infinity, 50), onPressed: onPressed);
   }
 }
