@@ -2,6 +2,7 @@ import 'package:design_sos/design_sos.dart';
 import 'package:flutter/material.dart';
 import 'package:sos/shared/elements/icons_element.dart';
 import 'package:sos/shared/widgets/svg_images_widgets.dart';
+import 'package:sos/shared/widgets/widgets.dart';
 
 class CardPetWidget extends StatelessWidget {
   final String name;
@@ -67,11 +68,7 @@ class CardPetWidget extends StatelessWidget {
                             ],
                           ),
                           const Spacer(),
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                            decoration: BoxDecoration(color: Theme.of(context).colorScheme.primary, borderRadius: BorderRadius.circular(50)),
-                            child: Text(status, style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: Theme.of(context).colorScheme.onPrimary)),
-                          ),
+                          StatusPetWidget(status: status),
                         ],
                       ),
                     ],

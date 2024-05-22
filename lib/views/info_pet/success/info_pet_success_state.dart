@@ -1,26 +1,19 @@
 import 'package:framework_sos/framework_sos.dart';
+import 'package:sos/core/core.dart';
 
 class InfoPetSuccessState extends SuccessBaseState {
-  final String text;
-
-  late final VoidCallbackSuccessState<InfoPetSuccessState> _onClick;
+  final PetEntity petEntity;
+  final Function(String) whatsapp;
 
   InfoPetSuccessState({
-    required this.text,
-    required VoidCallbackSuccessState<InfoPetSuccessState> onClick,
-  }) {
-    _onClick = onClick;
-  }
+    required this.petEntity,
+    required this.whatsapp,
+  });
 
-  InfoPetSuccessState copyWith({
-    String? text,
-    VoidCallbackSuccessState<InfoPetSuccessState>? onClick,
-  }) {
+  InfoPetSuccessState copyWith({PetEntity? petEntit, Function(String?)? whatsapp}) {
     return InfoPetSuccessState(
-      text: text ?? this.text,
-      onClick: onClick ?? _onClick,
+      petEntity: petEntity ?? petEntity,
+      whatsapp: whatsapp ?? this.whatsapp,
     );
   }
-
-  void onClick() => _onClick(this);
 }
